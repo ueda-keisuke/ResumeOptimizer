@@ -16,6 +16,9 @@ def analyze_desired_candidate_profile(job_description, temperature=0.1, chosen_m
         5. Lastly, extract and present the desired_candidate_profile based on the current prompt's findings.
 
         Based on the input below, output the information adhering to the above guidelines in YAML format.
+        
+        Please provide the structured data in YAML format without including the "```yaml" notation.
+
 
         ---
 
@@ -39,11 +42,10 @@ def refine_resume(desired_candidate_profile, resume, temperature=0.1, chosen_mod
         template="""
         Given the specific "Desired Candidate Profile" provided below, I need you to rewrite and enhance the content of the provided "Resume" to make it more appealing.
         
-        ---
-        #Resume
+        ## Resume
         {resume}        
         ---
-        #Desired Candidate Profile
+        ## Desired Candidate Profile
         {desired_candidate_profile}
         ---
 
@@ -57,13 +59,17 @@ def refine_resume(desired_candidate_profile, resume, temperature=0.1, chosen_mod
 
         Present the qualifications in a manner that aligns exceptionally well with the requirements of the specific job.
 
-        The output should be in a structured text format using YAML. For instance, under "Work Experience", list the job history chronologically. The same goes for "Education".
+        The output should be in a structured text format using Markdown. For instance, under "Work Experience", list the job history chronologically. The same goes for "Education".
 
         If the original resume contains the applicant's name, contact details, and links like LinkedIn, ensure these are displayed above other items.
 
         If the resume includes critical prerequisites like visa status, these should be mentioned near the top.
 
         Keep the resume content concise, fitting it to the equivalent of one A4 page.        
+        
+        Please provide the structured data in Markdown format without including code blocks or other unnecessary notations.
+
+
     """
     )
 
